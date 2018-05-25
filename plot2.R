@@ -7,7 +7,8 @@ hpcData$Global_active_power <- as.numeric(hpcData$Global_active_power)
 hpcData <- transform.data.frame(hpcData, DateTime = paste(Date, Time, sep=" "))
 hpcData$DateTime <- strptime(hpcData$DateTime, format="%d/%m/%Y %H:%M:%S")
 
+png(filename="plot2.png")
+
 plot(x=hpcData$DateTime, y=hpcData$Global_active_power, type="l", xlab = "", ylab="Global Active Power (kilowatts)")
 
-dev.copy(png, 'plot2.png')
 dev.off()

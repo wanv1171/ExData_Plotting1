@@ -10,11 +10,12 @@ hpcData$Sub_metering_1 <- as.numeric(hpcData$Sub_metering_1)
 hpcData$Sub_metering_2 <- as.numeric(hpcData$Sub_metering_2)
 hpcData$Sub_metering_3 <- as.numeric(hpcData$Sub_metering_3)
 
+png(filename="plot3.png")
+
 plot(x=hpcData$DateTime, y=hpcData$Sub_metering_1, type="l", xlab = "", ylab="Energy sub metering")
 lines(x=hpcData$DateTime, y=hpcData$Sub_metering_2, type = "l", col = "red")
 lines(x=hpcData$DateTime, y=hpcData$Sub_metering_3, type = "l", col = "blue")
 
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black","red","blue"), lty=1)
 
-dev.copy(png, 'plot3.png')
 dev.off()
